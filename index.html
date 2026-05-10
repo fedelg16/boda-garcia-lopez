@@ -288,25 +288,83 @@
                 <strong>[FECHA LÍMITE RSVP]</strong>
             </p>
 
-            <!--
-                INSTRUCCIONES PARA EL FORMULARIO RSVP:
-                1. Crea tu Google Form en https://forms.google.com
-                2. Haz clic en "Enviar" (Send)
-                3. Selecciona el ícono de "<>" (embed HTML)
-                4. Copia SOLO la URL del atributo src="..."
-                5. Pégala abajo reemplazando [GOOGLE_FORM_EMBED_URL]
-            -->
             <div class="rsvp-form-wrapper">
-                <iframe
-                    src="[GOOGLE_FORM_EMBED_URL]"
-                    width="100%"
-                    height="700"
-                    frameborder="0"
-                    marginheight="0"
-                    marginwidth="0"
-                    title="Formulario de confirmación de asistencia">
-                    Cargando formulario…
-                </iframe>
+                <form id="rsvpForm" class="rsvp-form" novalidate>
+
+                    <div class="form-group">
+                        <label for="rsvpNombre">Nombre completo</label>
+                        <input
+                            type="text"
+                            id="rsvpNombre"
+                            autocomplete="name"
+                            placeholder="Tu nombre completo">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rsvpAcompanantes">Número de acompañantes</label>
+                        <div class="select-wrapper">
+                            <select id="rsvpAcompanantes">
+                                <option value="0">Vengo solo / sola</option>
+                                <option value="1">1 acompañante</option>
+                                <option value="2">2 acompañantes</option>
+                                <option value="3">3 acompañantes</option>
+                                <option value="4">4 acompañantes</option>
+                                <option value="5">5 acompañantes</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rsvpRestricciones">Restricciones alimenticias o alergias <span class="form-optional">· opcional</span></label>
+                        <textarea
+                            id="rsvpRestricciones"
+                            rows="3"
+                            placeholder="Ej: vegetariano, alérgico al marisco…"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rsvpCancion">¿Qué canción no puede faltar? <span class="form-optional">· opcional</span></label>
+                        <input
+                            type="text"
+                            id="rsvpCancion"
+                            placeholder="Artista — Canción">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rsvpMensaje">Mensaje para los novios <span class="form-optional">· opcional</span></label>
+                        <textarea
+                            id="rsvpMensaje"
+                            rows="4"
+                            placeholder="Algo bonito que quieras contarles…"></textarea>
+                    </div>
+
+                    <p class="form-error" id="rsvpError"></p>
+
+                    <button type="submit" class="rsvp-submit-btn" id="rsvpSubmitBtn">
+                        <span>Confirmar asistencia</span>
+                        <svg viewBox="0 0 24 24" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+
+                </form>
+
+                <div class="rsvp-success" id="rsvpSuccess">
+                    <div class="success-monogram">
+                        <svg viewBox="0 0 100 100" width="70">
+                            <circle cx="50" cy="50" r="40" stroke="#6b7d3a" stroke-width="0.6" fill="none"/>
+                            <text x="50" y="58" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="28" font-style="italic" fill="#6b7d3a">S&amp;D</text>
+                        </svg>
+                    </div>
+                    <h3 class="success-title">¡Nos vemos el 4 de julio!</h3>
+                    <p class="success-text">Tu asistencia ha sido confirmada.<br>Estamos muy emocionados de compartir este día contigo.</p>
+                    <div class="floral-divider" style="margin-top:1.5rem">
+                        <svg viewBox="0 0 200 30" width="140">
+                            <path d="M10 15 Q 50 5, 100 15 T 190 15" stroke="#6b7d3a" stroke-width="0.6" fill="none"/>
+                            <circle cx="100" cy="15" r="3" fill="#6b7d3a" opacity="0.9"/>
+                            <circle cx="60" cy="12" r="1.5" fill="#8aa370" opacity="0.8"/>
+                            <circle cx="140" cy="18" r="1.5" fill="#8aa370" opacity="0.8"/>
+                        </svg>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -326,5 +384,7 @@
     </main>
 
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+    <script src="rsvp.js"></script>
 </body>
 </html>

@@ -888,10 +888,175 @@ h1, h2, h3, h4 {
     border-radius: 2px;
 }
 
-.rsvp-form-wrapper iframe {
-    border: none;
-    background: transparent;
+/* ===========================
+   RSVP — formulario propio
+   =========================== */
+.rsvp-form {
+    text-align: left;
+    padding: 0.5rem 0.5rem 0;
+}
+
+.form-group {
+    margin-bottom: 1.6rem;
+}
+
+.form-group label {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.66rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+}
+
+.form-optional {
+    color: var(--ink-soft);
+    letter-spacing: 0.08em;
+    font-weight: 300;
+    text-transform: none;
+    font-size: 0.95em;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
     width: 100%;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(107, 125, 58, 0.25);
+    border-radius: 2px;
+    padding: 0.85rem 1rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.08rem;
+    font-style: italic;
+    color: var(--ink);
+    transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--ink-soft);
+    opacity: 0.55;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--gold);
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 0 0 3px rgba(107, 125, 58, 0.07);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 88px;
+}
+
+.select-wrapper {
+    position: relative;
+}
+
+.select-wrapper::after {
+    content: '';
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--gold);
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.form-group select {
+    cursor: pointer;
+    padding-right: 2.5rem;
+}
+
+.form-error {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.76rem;
+    color: #9b4343;
+    margin-bottom: 0.8rem;
+    display: none;
+    letter-spacing: 0.02em;
+}
+
+.rsvp-submit-btn {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold-dark);
+    padding: 0.9rem 2.4rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-weight: 300;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    border-radius: 0;
+    width: 100%;
+    margin-top: 0.4rem;
+}
+
+.rsvp-submit-btn:hover:not(:disabled) {
+    background: var(--gold);
+    color: var(--cream);
+    letter-spacing: 0.4em;
+}
+
+.rsvp-submit-btn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.rsvp-submit-btn svg {
+    transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+.rsvp-submit-btn:hover:not(:disabled) svg {
+    transform: translateX(4px);
+}
+
+/* Estado de confirmación exitosa */
+.rsvp-success {
+    display: none;
+    text-align: center;
+    padding: 2.5rem 1rem;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.success-monogram {
+    margin-bottom: 1.4rem;
+    opacity: 0.9;
+}
+
+.success-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    color: var(--ink);
+    margin-bottom: 0.9rem;
+}
+
+.success-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+    line-height: 1.9;
 }
 
 /* ===========================
