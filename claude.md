@@ -17,6 +17,9 @@ boda-garcia-lopez/
 ├── index.html       # Invitación principal
 ├── styles.css       # Todos los estilos
 ├── script.js        # Sobre, countdown, scroll reveal, parallax
+├── rsvp.js          # RSVP con Supabase (búsqueda por código único)
+├── admin.html       # Panel de administración (protegido por contraseña)
+├── admin.js         # Lógica admin — usa service_role key (NO commitear público)
 ├── assets/
 │   └── favicon.svg
 └── README.md
@@ -52,18 +55,20 @@ boda-garcia-lopez/
 - [x] Cita romántica
 - [x] Cuenta regresiva (4 Jul 2026, 3:45 PM)
 - [x] Detalles del evento (lugar, hora, mapa)
+- [x] Itinerario del día (ceremonia 3:45 PM + placeholders cóctel/recepción)
 - [x] Código de vestimenta (formal, paleta damas de honor)
 - [x] Mesa de regalos (pendiente: datos bancarios reales)
-- [x] Sección RSVP (pendiente: reemplazar iframe con form propio)
+- [x] Info para viajeros (hoteles placeholder + transporte Bogotá)
+- [x] RSVP con Supabase — búsqueda por código único, tabla `invitados`
+- [x] Admin dashboard (`admin.html` + `admin.js`) — agregar/eliminar/exportar
 - [x] Footer con monograma
 
 ## Backlog de features
-- [ ] **RSVP con Supabase** — form integrado + admin dashboard (`admin.html`)
-- [ ] **Galería de fotos** — sección con fotos de la pareja
-- [ ] **Itinerario del día** — ceremonia, cóctel, recepción con horarios
-- [ ] **Info para viajeros** — hoteles recomendados en Bogotá
+- [ ] **Galería de fotos** — sección con fotos de la pareja (requiere fotos reales)
 
 ## Placeholders pendientes (en index.html)
-- Datos bancarios transferencia: `[BANCO]`, `[CLABE / NÚMERO DE CUENTA]`, `[TITULAR]`
+- Datos bancarios: `[BANCO]`, `[CLABE / NÚMERO DE CUENTA]`, `[TITULAR]`
 - Mesa de regalos: `[LINK_MESA_REGALOS]`, `[NOMBRE TIENDA]`
 - Fecha límite RSVP: `[FECHA LÍMITE RSVP]`
+- Itinerario: `[HORA]` y `[Lugar]` de cóctel y recepción
+- Hoteles: 3 × `[Hotel N] — [zona]` en sección viajeros
