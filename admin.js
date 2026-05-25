@@ -353,15 +353,25 @@ function mostrarWhatsApp(id) {
   if (!inv) return;
 
   var url = window.location.origin + '/?code=' + encodeURIComponent(inv.codigo);
-  var cuposText = inv.cupos === 1 ? '1 lugar reservado' : inv.cupos + ' lugares reservados';
+  var cuposText = inv.cupos === 1 ? '1 lugar' : inv.cupos + ' lugares';
   var msg =
-    '¡Hola, ' + inv.cabeza + '! 🌿\n\n' +
-    'Te invitamos a la boda de *Santiago García & Daniela López* el *sábado 4 de julio de 2026* en Bogotá.\n\n' +
-    'Tienes *' + cuposText + '* para este evento.\n\n' +
+    '*¡Nos casamos!* 🤍\n\n' +
+    'Hay momentos en la vida que son inolvidables, y compartirlos con las personas que más amamos los hace eternos. Por eso, queremos que formes parte de nuestra historia.\n\n' +
+    '*Daniela & Santiago*\n\n' +
+    'Tenemos el honor de invitarte, ' + inv.cabeza + ', a la celebración de nuestro matrimonio.\n\n' +
+    '*Detalles del evento*\n' +
+    '📅 Fecha: Sábado 4 de julio, 2026\n' +
+    '🕒 Hora: 3:30 pm\n' +
+    '📍 Lugar: Parroquia Nuestra Señora del Monte Carmelo\n' +
+    'Calle 127a Bis #5a-21, Bogotá\n\n' +
+    '*Confirmación y pases*\n' +
+    'Para nosotros es muy importante contar con tu presencia, y para ofrecerte la mejor experiencia, hemos organizado cada detalle con mucho cariño.\n\n' +
+    'Tus lugares reservados: *' + cuposText + '*\n' +
+    'Fecha límite de confirmación: *18 de junio*\n\n' +
     'Confirma tu asistencia aquí:\n' +
     '🔗 ' + url + '\n\n' +
-    'Por favor responde antes del *18 de junio*.\n\n' +
-    '¡Te esperamos con mucho amor! 💚';
+    '_Nota importante: debido a que los cupos del lugar son limitados, te agradecemos de corazón confirmar tu asistencia a tiempo y respetar el número de lugares asignados en esta invitación._\n\n' +
+    '¡Estamos felices de vivir este día junto a ti! 🤍';
 
   document.getElementById('waText').value = msg;
   document.getElementById('waOpenBtn').href = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(msg);
